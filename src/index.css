@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,7 +16,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 250 87% 66%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -35,19 +38,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -79,6 +75,7 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -88,6 +85,10 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 @layer base {
@@ -96,6 +97,68 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-gray-900 mb-2 text-center;
+  }
+  
+  .section-subtitle {
+    @apply w-16 h-1 bg-purple mx-auto my-4;
+  }
+
+  .feature-card {
+    @apply bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100;
+  }
+
+  .feature-icon {
+    @apply w-12 h-12 rounded-lg flex items-center justify-center text-white mb-4;
+  }
+
+  .button-primary {
+    @apply bg-purple text-white font-medium py-3 px-6 rounded-md hover:bg-purple-dark transition-colors duration-200;
+  }
+
+  .button-secondary {
+    @apply bg-white text-gray-800 font-medium py-3 px-6 rounded-md border border-gray-200 hover:bg-gray-50 transition-colors duration-200;
+  }
+
+  .faq-item {
+    @apply border-b border-gray-200 py-5;
+  }
+
+  .faq-question {
+    @apply flex justify-between items-center cursor-pointer w-full text-left font-medium text-gray-900;
+  }
+
+  .faq-answer {
+    @apply mt-3 text-gray-600;
+  }
+  
+  .stat-item {
+    @apply flex items-center;
+  }
+  
+  .stat-number {
+    @apply text-4xl font-bold text-white;
+  }
+  
+  .stat-plus {
+    @apply text-4xl font-bold text-purple-light;
+  }
+  
+  .stat-label {
+    @apply text-white mt-1;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24;
   }
 }
